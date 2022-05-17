@@ -6,7 +6,13 @@ function Question(props) {
         <div
             className="Answer"
             key={ans.id}
-            style={{backgroundColor: ans.isHeld ? "green" : "white"}}
+            style={{
+                backgroundColor:
+                    ans.isHeld ? "lightblue"
+                    : ans.wrong ? "orange"
+                    : ans.right ? "lightgreen"
+                    : "white"
+        }}
             onClick={() => props.holdAnswer(ans.id, ans.question)}
         >
             {ans.content}

@@ -23,7 +23,9 @@ function App() {
             content: ans,
             id: nanoid(),
             isHeld: false,
-            question: question
+            question: question,
+            wrong: false,
+            right: false
         }))
     }
 
@@ -67,6 +69,29 @@ function App() {
         } ))
     }
 
+    function checkAnswers() {
+        setQuestions(prevState => prevState.map(item => {
+
+            const answersChecked = item.answers.map(ans => {
+
+                    if (ans.content === item.correct && ans.isHeld) {
+                        return {...ans, right: true, isHeld: false}
+                    } else if (ans.content !== item.correct && ans.isHeld) {
+                        return {...ans, wrong: true, isHeld: false}
+                    } else if (ans.content === item.correct && !ans.isHeld) {
+                        return {...ans, right: true}
+                    } else {
+                        return ans
+                    }
+
+                }
+            )
+
+            return {...item, answers: answersChecked}
+
+        }))
+    }
+
 
     return(
 
@@ -78,6 +103,7 @@ function App() {
                     ? <Action
                         questions={questions}
                         holdAnswer={holdAnswer}
+                        checkAnswers={checkAnswers}
                     />
 
                     : <Preface

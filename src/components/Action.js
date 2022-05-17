@@ -16,6 +16,7 @@ function Action(props) {
 
             <button
                 className="Action__btn"
+                onClick={props.checkAnswers}
             >
                 Check Answers
             </button>
