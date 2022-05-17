@@ -24,7 +24,7 @@ function Action(props) {
                     ? <div className="btn-container">
 
                         <p className="result-msg">
-                            {`You scored ${props.counter/2}/5 correct answers`}
+                            {`You scored ${props.counter}/5 correct answers`}
                         </p>
 
                         <button
