@@ -8,6 +8,8 @@ function App() {
     const [begin, setBegin] = React.useState(false)
     const [apiData, setApiData] = React.useState('')
     const [questions, setQuestions] = React.useState('')
+    const [checked, setChecked] = React.useState(false)
+    const [counter, setCounter] = React.useState(0)
 
     React.useEffect(() => {
         fetch('https://opentdb.com/api.php?amount=5&difficulty=easy&type=multiple')
@@ -19,6 +21,7 @@ function App() {
         const random = Math.floor(Math.random() * 4)
 
         wrongAns.splice(random, 0, correctAns)
+
         return wrongAns.map(ans => ({
             content: ans,
             id: nanoid(),
@@ -29,22 +32,24 @@ function App() {
         }))
     }
 
-    console.log(questions)
-
     function beginGame() {
         setBegin(true)
-        setQuestions(
-            apiData.map(item => ({
-                id: nanoid(),
-                question: item.question,
-                correct: item.correct_answer,
-                answers: setAnswers(
-                    item.correct_answer,
-                    item.incorrect_answers,
-                    item.question
-                )
-            }))
-        )
+        setQuestions(translateApiData())
+    }
+
+    function translateApiData() {
+        return apiData.map(item => ({
+
+            id: nanoid(),
+            question: item.question,
+            correct: item.correct_answer,
+            answers: setAnswers(
+                item.correct_answer,
+                item.incorrect_answers,
+                item.question
+            )
+
+        }))
     }
 
     function holdAnswer(id, ask) {
@@ -75,6 +80,7 @@ function App() {
             const answersChecked = item.answers.map(ans => {
 
                     if (ans.content === item.correct && ans.isHeld) {
+                        setCounter(prevState => prevState + 1)
                         return {...ans, right: true, isHeld: false}
                     } else if (ans.content !== item.correct && ans.isHeld) {
                         return {...ans, wrong: true, isHeld: false}
@@ -90,6 +96,25 @@ function App() {
             return {...item, answers: answersChecked}
 
         }))
+
+        setChecked(true)
+    }
+
+    function playAgain() {
+
+        setApiData('')
+        setQuestions('')
+        setCounter(0)
+        setChecked(false)
+
+        fetch('https://opentdb.com/api.php?amount=5&difficulty=easy&type=multiple')
+            .then(res => res.json())
+            .then(data => setApiData(data.results))
+
+        if (apiData) {
+            beginGame()
+        }
+
     }
 
 
@@ -104,6 +129,9 @@ function App() {
                         questions={questions}
                         holdAnswer={holdAnswer}
                         checkAnswers={checkAnswers}
+                        checked={checked}
+                        counter={counter}
+                        playAgain={playAgain}
                     />
 
                     : <Preface
@@ -118,17 +146,3 @@ function App() {
 }
 
 export default App
-
-
-
-
-    // React.useEffect(() => {
-    //     setQuestions(
-    //         apiData.map(item => ({
-    //             id: nanoid(),
-    //             question: item.question,
-    //             correct: item.correct_answer,
-    //             wrong: setAnswers(item.correct_answer, item.incorrect_answers)
-    //         }))
-    //     )
-    // }, [apiData])
