@@ -2,7 +2,7 @@ import React from "react";
 
 function Preface(props) {
   return (
-    <section className="Preface">
+    <section className="preface">
       <h1 className="preface__h1">Quizzical</h1>
 
       <p className="preface__subheading">

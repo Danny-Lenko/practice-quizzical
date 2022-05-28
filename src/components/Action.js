@@ -12,7 +12,7 @@ function Action(props) {
   ));
 
   return (
-    <div className="Action">
+    <div className="action">
       {allQuestions}
 
       {props.checked ? (
@@ -21,12 +21,12 @@ function Action(props) {
             {`You scored ${props.counter}/5 correct answers`}
           </p>
 
-          <button className="Action__btn" onClick={props.playAgain}>
+          <button className="action__btn" onClick={props.playAgain}>
             Play Again
           </button>
         </div>
       ) : (
-        <button className="Action__btn" onClick={props.checkAnswers}>
+        <button className="action__btn" onClick={props.checkAnswers}>
           Check Answers
         </button>
       )}

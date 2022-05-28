@@ -90,15 +90,16 @@ function App() {
     setChecked(true);
     fetch("https://opentdb.com/api.php?amount=5&difficulty=easy&type=multiple")
       .then((res) => res.json())
-      .then((data) => setApiData(data.results));
+      .then((data) => setApiData(data.results))
+      .catch((err) => console.log(err));
   }
 
   function playAgain() {
+    setBegin(false);
     setApiData("");
     setQuestions("");
     setCounter(0);
     setChecked(false);
-    setBegin(false);
 
     if (apiData) {
       beginGame();
@@ -106,7 +107,7 @@ function App() {
   }
 
   return (
-    <main className="App">
+    <main className="app">
       {begin ? (
         <Action
           questions={questions}

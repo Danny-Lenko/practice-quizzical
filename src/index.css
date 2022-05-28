@@ -1,13 +1,13 @@
 body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -17,7 +17,7 @@ code {
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* Remove default margin */
@@ -31,37 +31,37 @@ figure,
 blockquote,
 dl,
 dd {
-    margin: 0;
+  margin: 0;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
-    list-style: none;
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
 }
 
 /* Set core root defaults */
 html:focus-within {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 /* Set core body defaults */
 body {
-    min-height: 100vh;
-    text-rendering: optimizeSpeed;
-    line-height: 1.5;
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
 }
 
 /* A elements that don't have a class get default styles */
 a:not([class]) {
-    text-decoration-skip-ink: auto;
+  text-decoration-skip-ink: auto;
 }
 
 /* Make images easier to work with */
 img,
 picture {
-    max-width: 100%;
-    display: block;
+  max-width: 100%;
+  display: block;
 }
 
 /* Inherit fonts for inputs and buttons */
@@ -69,195 +69,195 @@ input,
 button,
 textarea,
 select {
-    font: inherit;
+  font: inherit;
 }
 
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
-    html:focus-within {
-        scroll-behavior: auto;
-    }
+  html:focus-within {
+    scroll-behavior: auto;
+  }
 
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 /* -------------------------------------------- end of css reset */
 
 body {
-    background-color: #1c1c1c;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background-color: #1c1c1c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 h1,
 h2,
 h3,
 h4 {
-    font-family: 'Karla', sans-serif;
-    font-weight: 700;
+  font-family: "Karla", sans-serif;
+  font-weight: 700;
 }
 
-.App {
-    height: 550px;
-    width: 550px;
-    background-color: #F5F7FB;
+.app {
+  height: 550px;
+  width: 550px;
+  background-color: #f5f7fb;
 }
 
 /* ----------------------------------------- Preface component */
 
-.Preface {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+.preface {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 .preface__h1 {
-    color: #293264;
-    font-size: calc( 31.25rem / 16 );
+  color: #293264;
+  font-size: calc(31.25rem / 16);
 }
 
 .preface__subheading {
-    color: #293264;
-    font-weight: 400;
-    margin-bottom: 30px;
+  color: #293264;
+  font-weight: 400;
+  margin-bottom: 30px;
 }
 
 .preface__btn {
-    line-height: 1;
-    padding: 16px 0;
-    width: 193px;
-    background-color: #4D5B9E;
-    color: #F5F7FB;
-    border-radius: 15px;
-    border: 0;
-    cursor: pointer;
+  line-height: 1;
+  padding: 16px 0;
+  width: 193px;
+  background-color: #4d5b9e;
+  color: #f5f7fb;
+  border-radius: 15px;
+  border: 0;
+  cursor: pointer;
 }
 
 .preface__btn:focus,
-.Action__btn:focus{
-    outline: none;
+.Action__btn:focus {
+  outline: none;
 }
 
 .preface__btn:active,
 .Action__btn:active {
-    box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
+  box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
 }
 
 .preface__blob1 {
-    position: absolute;
-    right: 0;
-    top: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .preface__blob2 {
-    position: absolute;
-    left: 0;
-    bottom: 0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
 }
 
 /* ----------------------------------------- Action component */
 
-.Action {
-    position: relative;
-    background-color: #F5F7FB;
-    height: 100%;
-    padding: 15px 75px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+.action {
+  position: relative;
+  background-color: #f5f7fb;
+  height: 100%;
+  padding: 15px 75px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
-.Action__btn {
-    font-size: calc(10.24rem / 16);
-    line-height: 1;
-    padding: 11px 0;
-    color: #F5F7FB;
-    background-color: #4D5B9E;
-    width: 120px;
-    border: 0;
-    align-self: center;
-    border-radius: 10px;
-    cursor: pointer;
+.action__btn {
+  font-size: calc(10.24rem / 16);
+  line-height: 1;
+  padding: 11px 0;
+  color: #f5f7fb;
+  background-color: #4d5b9e;
+  width: 120px;
+  border: 0;
+  align-self: center;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 .btn-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .result-msg {
-    font-size: calc(12.8rem / 16);
-    color: #293264;
-    font-weight: 700;
-    margin-right: 20px;
+  font-size: calc(12.8rem / 16);
+  color: #293264;
+  font-weight: 700;
+  margin-right: 20px;
 }
 
 /* ------------------------------------------- Question component*/
 
-.Question {
-    z-index: 1000;
+.question {
+  z-index: 1000;
 }
 
-.Question__ask {
-    font-family: 'Karla', sans-serif;
-    font-weight: 700;
-    color: #293264;
-    font-size: 1rem;
-    line-height: 1.15;
-    margin-bottom: 10px;
+.question__ask {
+  font-family: "Karla", sans-serif;
+  font-weight: 700;
+  color: #293264;
+  font-size: 1rem;
+  line-height: 1.15;
+  margin-bottom: 10px;
 }
 
-.Question__options {
-    display: flex;
+.question__options {
+  display: flex;
 }
 
 hr {
-    margin-top: 10px;
-    background-color: #DBDEF0;
-    height: 1px;
-    border: 0;
-    outline: 0;
+  margin-top: 10px;
+  background-color: #dbdef0;
+  height: 1px;
+  border: 0;
+  outline: 0;
 }
 
 /* --------------------------------------- Answer component*/
 
-.Answer {
-    min-width: 65px;
-    outline: 1px solid #2E86C1;
-    line-height: 1;
-    border-radius: 7px;
-    font-size: calc(10.24rem / 16);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 4px;
-    margin-bottom: 0;
-    cursor: pointer;
+.answer {
+  min-width: 65px;
+  outline: 1px solid #2e86c1;
+  line-height: 1;
+  border-radius: 7px;
+  font-size: calc(10.24rem / 16);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4px;
+  margin-bottom: 0;
+  cursor: pointer;
 }
-.Answer:hover {
-    background-color: #D6EAF8;
+.answer:hover {
+  background-color: #d6eaf8;
 }
-.Answer:not(:last-child) {
-    margin-right: 12px;
+.answer:not(:last-child) {
+  margin-right: 12px;
 }
 
 .grey-bcg {
-    background-color: lightgrey;
-    color: #1c1c1c;
+  background-color: lightgrey;
+  color: #1c1c1c;
 }
 .grey-bcg:active {
-    box-shadow: none;
+  box-shadow: none;
 }
